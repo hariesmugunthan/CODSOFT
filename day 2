@@ -1,0 +1,196 @@
+package problems;
+import java.util.*;
+public class day2 {
+	static Scanner o=new Scanner(System.in);
+	public static void main(String[] args) {
+		//fabinocci();
+		//count();
+		//rev();
+		//day();
+		//bitwise();
+//		int mark=o.nextInt();
+//		char grade=(mark>90)?'A':(mark>80)?'B':(mark>70)?'C':'D';
+//		System.out.println(grade);
+	//	month();
+		//leepyear();
+		boolean a=true,b=false;
+		if(b&&metha()) {
+			System.out.println("hellooooo");
+		}
+		if(b||methb()) {
+			System.out.println("opk");
+		}
+		
+	
+
+	}
+	static boolean metha() {
+		return true;
+	}
+	static boolean methb() {
+		return true;
+	}
+
+	public static void fabinocci() {
+		
+		int n=o.nextInt();
+		int a=0;
+		int b=1;
+		int c=0;
+		for(int i=0;i<=n;i++) {
+			c=a+b;
+			//System.out.println(c);
+			a=b;
+			b=c;
+			if(i==n) {
+				System.out.println(c);
+			}
+		}
+		System.out.println(c);
+	}
+	static void count() {
+		int n=o.nextInt();
+		int count=0;
+		int t=o.nextInt();
+		while(n>0) {
+			int r=n%10;
+			if(r==t) {
+				count++;
+			}
+			n=n/10;
+		}
+		System.out.println(count);
+	}
+	static void rev() {
+		int n=o.nextInt();
+		int rev=0;
+		while(n>0) {
+			int r=n%10;
+			rev=(rev*10)+r;
+			//System.out.print(r);
+			n=n/10;
+		}
+		System.out.println(rev);
+	}
+	static void day() {
+		int day=o.nextInt();
+		switch(day) {
+		case 1:
+			System.out.println("sunday");
+			break;
+		case 2:
+			System.out.println("monday");
+			break;
+		case 3:
+			System.out.println("tuesday");
+			break;
+		case 4:
+			System.out.println("wednesday");
+			break;
+		case 5:
+			System.out.println("thursday");
+			break;
+		case 6:
+			System.out.println("friday");
+			break;
+		case 7:
+			System.out.println("suturday");
+			break;
+		default:
+				System.out.println("invalid");
+		}
+	}
+	static void bitwise() {
+		int a=o.nextInt();
+		int b=o.nextInt();
+		String s=o.next().trim().toUpperCase();
+		switch(s) {
+		case "AND":
+			System.out.println(a&b);
+			break;
+		case "OR":
+			System.out.println(a|b);
+			break;
+		case "xor":
+			System.out.println(a^b);
+			break;
+		default:
+			System.out.println("vendam philipsyaee");
+		}
+			
+
+}
+	static void month() {
+		int m=o.nextInt();
+		switch(m)
+		{
+		case 1:
+			System.out.print("january ");
+		case 2:
+			System.out.print("feb ");
+		case 3:
+			System.out.print("march ");
+		case 4:
+			System.out.print("april ");
+		case 5:
+			System.out.print("may ");
+		case 6:
+			System.out.print("june ");
+		case 7:
+			System.out.print("july ");
+		case 8:
+			System.out.print("august ");
+		case 9:
+			System.out.print("sept ");
+		case 10:
+			System.out.print("oct ");
+		case 11:
+			System.out.print("nov ");
+		case 12:
+			System.out.print("dec ");
+			break;
+		default:
+			System.out.println("vanakkam da mappulaa CSE la irundhu");
+		}
+}
+	static void leepyear() {
+		int year=o.nextInt();
+		int day=o.nextInt();
+		String ty=(year%4==0&&year%100!=0)?"leep year":"normal year";
+		System.out.println(ty);
+		
+		while(true) {
+		if(ty.equals("normal year")&&day>365) {
+			System.out.println("invalid");
+			break;
+		
+		}
+		int de=day%7;
+		switch(de) {
+		case 1:
+			System.out.println("monday");
+			break;
+		case 2:
+			System.out.println("tuesday");
+			break;
+		case 3:
+			System.out.println("wednesday");
+			break;
+		case 4:
+			System.out.println("thursday");
+			break;
+		case 5:
+			System.out.println("friday");
+			break;
+		case 6:
+			System.out.println("saturday");
+			break;
+		case 7:
+			System.out.println("sunday");
+			break;
+		}
+		break;
+		}
+	}
+	
+}
