@@ -1,0 +1,188 @@
+package problems;
+
+import java.util.Scanner;
+
+public class day3 {
+	static Scanner o=new Scanner(System.in);
+	public static void main(String[] args) {
+		//p1();
+		//p2();
+		//p3();
+		//p4();
+		//p5();
+		//p6();
+		//p7();
+		//p8();
+		//p9();
+		//p10();
+		p11();
+
+	}
+	static void p1() {
+		char c;
+		int count=0;
+		String s=o.nextLine();
+		int[] asci= new int[256];
+		for(int i=0;i<s.length();i++) {
+			for(int j =0;j<asci.length;j++) {
+				if( s.charAt(i)==(char)(j)) {
+					asci[j]++;
+					
+				}
+			}
+		}
+		for(int i=0;i<asci.length;i++) {
+			if(asci[i]>0) {
+				if((char)i==' ') {
+				System.out.println("'_': "+asci[i]);}
+				else {
+					System.out.println((char)i+": "+asci[i]);
+				}
+			}
+		}
+		
+		
+	}
+	static void p2() {
+		int n=o.nextInt();
+		int count=0;
+		while(n!=1) {
+			count++;
+			if(n%2==0) {
+				n=n/2;
+			}else {
+				n=3*n+1;
+			}
+			
+		}
+		System.out.println(count);
+	}
+	static void p3() {
+		String s=o.next();
+		int t=0;
+		for(int i=0;i<s.length();i++) {
+			t=t+Integer.parseInt(""+s.charAt(i))+i+1;
+			
+		}
+		int a=t%11;
+		if(a==10) {
+			System.out.print(s+"x");
+		}
+		else {
+			System.out.print(s+""+a);
+		}
+		}
+	static void p4() {
+		int n=o.nextInt();
+		int c=0;
+		for(int j=1;c<n;j++) {
+
+			int f=0;
+			for(int i=1;i<=j;i++) {
+				if(j%i==0) {
+					f++;
+				}
+			}
+			if(f==2) {
+				System.out.print(j+" ");
+				c++;
+			}
+		}
+		
+		
+	}
+	static void p5() {
+		int a=o.nextInt();
+		for(int i=1;i<=100;i++) {
+			if(i%a==0) {
+				continue;
+			}
+			else
+				System.out.print(i+" ");
+		}
+	}
+	static void p6() {
+		for(int i=1;i<=10;i++) {
+			for(int j=1;j<=10;j++) {
+				if((i+j)%7==0) {
+					continue;
+				}else {
+					System.out.println("("+i+","+j+")");
+				}
+			
+			}
+		}
+	}
+	static void p7() {
+		int t=0;
+		while(true) {
+			int n=o.nextInt();
+			t=t+n;
+			if(t>1000) {
+				break;
+			}
+		}System.out.println(t);
+	}
+	static void p8() {
+		
+		for(int i=1;i<=999999999;i++) {
+			int t=0;
+			for(int j=1;j<i;j++) {
+				if(i%j==0) {
+					t=t+j;
+				}
+				if(t>i) {
+					break;
+				}
+			}
+			
+			if(i==t) {
+				System.out.print(i+" ");
+			}
+			
+		}
+	}
+	static void p9() {
+		do {
+			String a=o.next();
+			if(a.equalsIgnoreCase("exit")) {
+				System.out.println("exiting.......");
+				break;
+			}
+		}while(true);
+	}
+	static void p10(){
+		String s=o.next();
+		
+		for(int i=0;i<s.length();i++) {
+			boolean rep=false;
+			for(int j=i+1;j<s.length();j++) {
+				if(s.charAt(i)==s.charAt(j)) {
+					rep=true;
+					break;
+				}
+			}
+			if(!rep) {
+				System.out.println(s.charAt(i));
+				
+				break;
+			}
+			
+		}
+	}
+	static void p11() {
+		String s=o.nextLine();
+		String[] arr=s.split(",");
+		int sum=0;
+		for(int i=0;i<arr.length;i++) {
+			int e=Integer.parseInt(arr[i]);
+			if(e<0) {
+				continue;
+			}
+			else {
+				sum=sum+e;
+			}
+		}
+		System.out.println(sum);
+	}
+}
