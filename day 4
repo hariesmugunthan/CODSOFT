@@ -1,0 +1,152 @@
+package problems;
+import java.util.*;
+public class day4 {
+	static Scanner o=new Scanner(System.in);
+	public static void main(String[] args) {
+	//	q1();
+	//	q1i();  pakkanum
+		//q2();
+		//q3();
+		//q4();
+		//q5();
+		//q6();
+		//q7();
+		//q8();
+			//q9();	
+		//q10();
+		//q11();
+		q12();
+	}
+	static void q1() {   //thrla
+		String s=o.nextLine();
+		int count=0;
+		if(s.charAt(0)!=' ') {
+			count++;
+		}
+		for(int i=0;i<s.length()-1;i++) {
+			
+			 if(s.charAt(i)!=' '&&s.charAt(i+1)==' '&&i!=0){
+				count ++;
+			}
+			
+		}
+
+		if(s.charAt(0)==' ') {
+			System.out.println(++count);
+		}
+		else {
+			System.out.println(count);
+		}
+	}
+	
+	static void q1i() { // pathu potadhu
+		String s=o.nextLine();
+		int count=0;
+		boolean flag=false;
+		for(int i=0;i<s.length();i++) {
+			char c=s.charAt(i);
+			if(c!=' '&& !flag) {
+				count++;
+				flag=true;
+			}else if(c==' ') {
+				flag=false;
+			}
+		}
+		System.out.println(count);
+	}
+	static void q2() {
+//		int a=130;//130-256
+//		byte b= (byte)a;
+//		System.out.println(b);
+//		//		System.out.println(c);
+//		int a=10;
+//		int b=3;
+//		double c=a/b;;
+//		double c1=(double)a/b;
+//		System.out.println(c+" "+c1);
+//		byte a=50;
+//		a=(byte)(a*2);
+//		System.out.println(a);
+		char c='A';
+		int a=c;
+		System.out.println(a );
+	}
+	static void q3() {
+		double d=o.nextDouble();
+		long l=(long)d;
+		double dd=l;
+		System.out.println(d+"||"+l+"||"+dd);
+	}
+	static void q4() {
+		char a=o.next().trim().charAt(0);
+		char b=o.next().trim().charAt(0);
+		int a1=a-'0';
+		int b1=b-'0'; // pakkanum
+		System.out.println(a1+b1);
+		
+	}
+	static void q5() {
+		int i=100;
+		long l=(long)i;
+		byte b=(byte)i;
+		float f=l;
+		short s=(short)f;
+		System.out.println(i);
+		System.out.println(l);
+		System.out.println(b);
+		System.out.println(f);
+		System.out.println(s);
+	}
+	static void q6() {
+		String s=o.next();
+		int a=o.nextInt();
+		int b=o.nextInt();
+		int n=Integer.parseInt(s,a);
+		String s1=Integer.toString(n,b);
+		System.out.println(s1);
+	}
+	static void q7() {
+		Object s="ratata rendu parataaa";
+		if(s instanceof String) {
+			String o=(String)s;
+			System.out.println(o.length());
+		}
+		
+	}
+	static void q8() {
+		Object o=Integer.valueOf(23232323);
+		try {
+			String s=(String)o;
+		}
+		catch(ClassCastException e) {
+			System.out.println("invalid  ");
+		}
+	}
+	static void q9() {
+		char[] hellooo= {'h','e','l','l','o','o'};
+		int[] d= {3,3,4,3};
+		System.out.println(d);
+		System.out.println(hellooo);
+		String a=new String(hellooo);
+		System.out.println(a);
+	}
+	static void q10() {
+		String s=o.next();
+		int  b=Byte.parseByte(s, 2);
+		System.out.println(b);            // inbuild method
+		int i=Integer.parseInt(s, 2);
+		System.out.println(i);
+	}
+	static void q11() {
+		String s =o.nextLine();
+		char[] c=s.toCharArray();
+		for(char e:c) {
+			System.out.println(e);
+		}
+	}
+	static void q12() {
+		Integer a=Integer.valueOf(100);
+		Integer b=Integer.valueOf(100);
+		System.out.println(a==b);
+	}
+}
